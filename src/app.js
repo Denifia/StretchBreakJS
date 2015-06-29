@@ -42,7 +42,6 @@ function SetAlarm (alarm, currentDay, tryAgain) {
 
 Pebble.addEventListener("ready", function() {
   localAlarms = localStorage.getItem(alarmsStorageKey);
-  
   // If the alarms are not in local storage, create them
   if (localAlarms === null) {
     var alarms = [
@@ -71,7 +70,6 @@ Pebble.addEventListener("ready", function() {
   for (var i = 0; i < localAlarms.length; i++) {
     // Schedule the alarms
     var alarm = localAlarms[i];
-    console.log('Setting alarm for ' + alarm.hour + ' ' + alarm.minute);
     SetAlarm(alarm, currentDay, true);
   }
 });
